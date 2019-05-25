@@ -1,0 +1,28 @@
+version: '2.2'
+services: 
+  postgres:
+     container_name: centos-pg96
+     image: centos-pg96
+     restart: always
+     ports:
+       - 5433:5432
+     volumes:
+      - ./vol/postgres:/var/lib/postgresql
+      - ./vol/postgres/data:/var/lib/postgresql/data
+
+     environment:
+      - DB_USER=postgres
+      - DB_PASS=xxxx
+      - DB_NAME=xxx
+      
+  mysql:
+    image: centos-mysql57
+    container_name: centos-mysql57
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=xxx
+      - MYSQL_DATABASE=xxx
+    restart: always
+    volumes:
+     - ./vol/mysql:/var/lib/mysql
