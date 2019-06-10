@@ -1,0 +1,5 @@
+server.name: "kibana"
+server.host: "0.0.0.0"
+ops.interval: 5000
+elasticsearch.url: "[ip_server_here]:9203"
+xpack.security.enabled: false
